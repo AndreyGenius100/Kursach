@@ -1,0 +1,157 @@
+// Медиа-запросы
+@mixin media-breakpoint-up($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  }
+  @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  }
+  @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+  @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm - 1) { @content; }
+  }
+  @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md - 1) { @content; }
+  }
+  @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg - 1) { @content; }
+  }
+  @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl - 1) { @content; }
+  }
+}
+
+// Флексы
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// Позиционирование
+@mixin position($position, $top: null, $right: null, $bottom: null, ф$left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Типографика
+@mixin font($size: $font-size-base, $weight: $font-weight-regular, $line-height: $line-height-base) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Размеры
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// Тени
+@mixin box-shadow($shadow: $box-shadow-md) {
+  box-shadow: $shadow;
+}
+
+// Переходы
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+// Кнопки
+@mixin button-variant($bg-color, $text-color, $hover-bg-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  
+  &:hover, &:focus {
+    background-color: $hover-bg-color;
+  }
+  
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+// Границы
+@mixin border($width: $border-width, $style: solid, $color: $border-color) {
+  border: $width $style $color;
+}
+
+// Изображения и фоны
+@mixin bg-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// Сетка
+@mixin grid($columns: 1, $gap: $spacing-md) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// Карточки
+@mixin card {
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  box-shadow: $box-shadow-md;
+  overflow: hidden;
+}
+
+// Анимации
+@mixin fade-in($duration: 0.3s, $delay: 0s) {
+  animation: fadeIn $duration ease-in-out $delay forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+// Стилизация скроллбара
+@mixin custom-scrollbar($width: 8px, $thumb-color: $color-primary, $track-color: $color-bg-medium) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+    border-radius: $width / 2;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb-color;
+    border-radius: $width / 2;
+    
+    &:hover {
+      background-color: darken($thumb-color, 10%);
+    }
+  }
+}

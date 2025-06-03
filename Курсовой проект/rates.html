@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Курсы валют - Финансовый помощник</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="index.html" class="logo__link">
+            <img src="flex.svg" width="64" height="64" alt="Logo" class="logo__image">
+            <h1 class="logo__text">Финансовый помощник</h1>
+          </a>
+        </div>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+            <li class="nav__item"><a href="converter.html" class="nav__link">Конвертер валют</a></li>
+            <li class="nav__item"><a href="rates.html" class="nav__link nav__link--active">Курсы валют</a></li>
+            <li class="nav__item"><a href="loan.html" class="nav__link">Калькулятор кредитов</a></li>
+            <li class="nav__item"><a href="market-map.html" class="nav__link">Карта рынка</a></li>
+          </ul>
+        </nav>
+        <button class="burger-menu" aria-label="Меню">
+          <span class="burger-menu__line"></span>
+          <span class="burger-menu__line"></span>
+          <span class="burger-menu__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="page-header">
+      <div class="container">
+        <h2 class="page-header__title">Курсы валют НБРБ</h2>
+        <p class="page-header__text">Актуальные курсы валют Национального банка Республики Беларусь</p>
+      </div>
+    </section>
+
+    <section class="rates">
+      <div class="container">
+        <div class="rates__ads">
+          <div class="rates__ads-grid">
+            <div class="rates__ad-placeholder rates__ad-placeholder--wide">
+              <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+              <a href="#" class="rates__ad-link">Разместить рекламу</a>
+            </div>
+            <div class="rates__ad-placeholder rates__ad-placeholder--narrow">
+              <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+              <a href="#" class="rates__ad-link">Разместить рекламу</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="rates__header">
+          <div class="rates__info">
+            <p class="rates__date">Курсы валют на <span id="current-date">Загрузка...</span></p>
+            <p class="rates__update">Последнее обновление: <span id="last-update-time">Загрузка...</span></p>
+          </div>
+          <div class="rates__filter">
+            <label for="currency-filter" class="rates__filter-label">Фильтр:</label>
+            <div class="rates__select-wrapper">
+              <select id="currency-filter" class="rates__select">
+                <option value="all">Все валюты</option>
+                <option value="popular">Популярные</option>
+                <option value="europe">Европа</option>
+                <option value="asia">Азия</option>
+                <option value="america">Америка</option>
+              </select>
+              <svg class="rates__select-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="rates__search">
+          <div class="search">
+            <svg class="search__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor"/>
+            </svg>
+            <input type="text" id="currency-search" class="search__input" placeholder="Поиск валюты...">
+          </div>
+        </div>
+
+        <div class="rates__content">
+          <div class="rates__main">
+            <div class="rates__table-wrapper">
+              <table class="rates__table">
+                <thead class="rates__table-head">
+                  <tr>
+                    <th class="rates__th">
+                      <div class="rates__th-content">
+                        <span>Валюта</span>
+                        <svg class="rates__th-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="24" height="24" rx="4" fill="#2C3E50"/>
+                          <circle cx="12" cy="12" r="6" fill="#27AE60"/>
+                          <path d="M12 9v6M9 12h6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                      </div>
+                    </th>
+                    <th class="rates__th">
+                      <div class="rates__th-content">
+                        <span>Код</span>
+                        <svg class="rates__th-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="24" height="24" rx="4" fill="#2C3E50"/>
+                          <path d="M8 8h8M8 12h8M8 16h8" stroke="#27AE60" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                      </div>
+                    </th>
+                    <th class="rates__th">
+                      <div class="rates__th-content">
+                        <span>Единиц</span>
+                        <svg class="rates__th-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="24" height="24" rx="4" fill="#2C3E50"/>
+                          <path d="M8 6v12M12 6v12M16 6v12" stroke="#27AE60" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                      </div>
+                    </th>
+                    <th class="rates__th">
+                      <div class="rates__th-content">
+                        <span>Курс BYN</span>
+                        <svg class="rates__th-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="24" height="24" rx="4" fill="#2C3E50"/>
+                          <circle cx="12" cy="12" r="8" fill="none" stroke="#27AE60" stroke-width="1.5"/>
+                          <text x="12" y="14" text-anchor="middle" fill="#27AE60" font-size="5" font-family="Arial, sans-serif" font-weight="bold">BYN</text>
+                        </svg>
+                      </div>
+                    </th>
+                    <th class="rates__th">
+                      <div class="rates__th-content">
+                        <span>Изменение</span>
+                        <svg class="rates__th-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="24" height="24" rx="4" fill="#2C3E50"/>
+                          <path d="M6 15l6-6 3 3 3-3" stroke="#27AE60" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="currency-table-body" class="rates__table-body">
+                  <tr class="rates__loading">
+                    <td colspan="5">Загрузка данных...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="rates__sidebar">
+            <div class="rates__ad-placeholder">
+              <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+              <a href="#" class="rates__ad-link">Разместить рекламу</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="rates__mobile-banner">
+          <div class="rates__ad-placeholder">
+            <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+            <a href="#" class="rates__ad-link">Разместить рекламу</a>
+          </div>
+        </div>
+
+        <div class="rates-chart">
+          <div class="rates-chart__header">
+            <h3 class="rates-chart__title">График изменения курса</h3>
+            <div class="rates-chart__controls">
+              <select id="chart-currency" class="rates-chart__select">
+                <!-- Опции будут добавлены через JavaScript -->
+              </select>
+              <select id="chart-period" class="rates-chart__select">
+                <option value="7">7 дней</option>
+                <option value="30" selected>30 дней</option>
+                <option value="90">90 дней</option>
+                <option value="180">180 дней</option>
+                <option value="365">1 год</option>
+              </select>
+            </div>
+          </div>
+          <div class="rates-chart__container">
+            <canvas id="ratesChart"></canvas>
+            <div id="chartLoading" class="rates-chart__loading" style="display: none;">
+              <div class="rates-chart__loading-spinner"></div>
+              <p>Загрузка данных...</p>
+            </div>
+            <div id="chartError" class="rates-chart__error" style="display: none;">
+              <p>Произошла ошибка при загрузке данных. Пожалуйста, попробуйте позже.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rates__info-card">
+          <h3 class="rates__info-title">О курсах валют</h3>
+          <p class="rates__info-text">Все курсы валют представлены официальными данными Национального банка Республики Беларусь. Курсы обновляются автоматически при публикации новых данных НБРБ.</p>
+          <p class="rates__info-text">Для расчета обмена валют по указанным курсам, воспользуйтесь <a href="converter.html" class="rates__info-link">конвертером валют</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__info">
+          <div class="logo logo--footer">
+            <svg class="logo__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+              <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30c-7.732 0-14-6.268-14-14S8.268 2 16 2s14 6.268 14 14-6.268 14-14 14zm2-22h-4v2h4v-2zm0 4h-4v12h4V12z" fill="#fff"/>
+            </svg>
+            <span class="logo__text logo__text--footer">Финансовый помощник</span>
+          </div>
+          <p class="footer__text">Все курсы валют обновляются автоматически по данным Национального банка Республики Беларусь</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__column">
+            <h3 class="footer__title">Навигация</h3>
+            <ul class="footer__list">
+              <li class="footer__item"><a href="index.html" class="footer__link">Главная</a></li>
+              <li class="footer__item"><a href="converter.html" class="footer__link">Конвертер валют</a></li>
+              <li class="footer__item"><a href="rates.html" class="footer__link">Курсы валют</a></li>
+              <li class="footer__item"><a href="loan.html" class="footer__link">Калькулятор кредитов</a></li>
+              <li class="footer__item"><a href="market-map.html" class="footer__link">Карта рынка</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Финансовый помощник. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-menu">
+    <div class="mobile-menu__header">
+      <div class="logo">
+        <svg class="logo__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+          <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30c-7.732 0-14-6.268-14-14S8.268 2 16 2s14 6.268 14 14-6.268 14-14 14zm2-22h-4v2h4v-2zm0 4h-4v12h4V12z" fill="#27AE60"/>
+        </svg>
+        <span class="logo__text">Финансовый помощник</span>
+      </div>
+      <button class="mobile-menu__close" aria-label="Закрыть меню">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-menu__nav">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item"><a href="index.html" class="mobile-menu__link">Главная</a></li>
+        <li class="mobile-menu__item"><a href="converter.html" class="mobile-menu__link">Конвертер валют</a></li>
+        <li class="mobile-menu__item"><a href="rates.html" class="mobile-menu__link mobile-menu__link--active">Курсы валют</a></li>
+        <li class="mobile-menu__item"><a href="loan.html" class="mobile-menu__link">Калькулятор кредитов</a></li>
+        <li class="mobile-menu__item"><a href="market-map.html" class="mobile-menu__link">Карта рынка</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/rates.js"></script>
+  <script src="js/ad-modal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

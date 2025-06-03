@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор кредитов - Финансовый помощник</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="index.html" class="logo__link">
+            <img src="flex.svg" width="64" height="64" alt="Logo" class="logo__image">
+            <h1 class="logo__text">Финансовый помощник</h1>
+          </a>
+        </div>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+            <li class="nav__item"><a href="converter.html" class="nav__link">Конвертер валют</a></li>
+            <li class="nav__item"><a href="rates.html" class="nav__link">Курсы валют</a></li>
+            <li class="nav__item"><a href="loan.html" class="nav__link nav__link--active">Калькулятор кредитов</a></li>
+            <li class="nav__item"><a href="market-map.html" class="nav__link">Карта рынка</a></li>
+          </ul>
+        </nav>
+        <button class="burger-menu" aria-label="Меню">
+          <span class="burger-menu__line"></span>
+          <span class="burger-menu__line"></span>
+          <span class="burger-menu__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="page-header">
+      <div class="container">
+        <h2 class="page-header__title">Калькулятор кредитов</h2>
+        <p class="page-header__text">Рассчитайте ежемесячный платеж и общую сумму по кредиту с разными условиями</p>
+      </div>
+    </section>
+
+    <section class="loan-calculator">
+      <div class="container">
+        <div class="rates__ads">
+          <div class="rates__ads-grid">
+            <div class="rates__ad-placeholder rates__ad-placeholder--wide">
+              <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+              <a href="#" class="rates__ad-link">Разместить рекламу</a>
+            </div>
+            <div class="rates__ad-placeholder rates__ad-placeholder--narrow">
+              <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+              <a href="#" class="rates__ad-link">Разместить рекламу</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="rates__content">
+          <div class="rates__main">
+            <div class="loan-calculator__inner">
+              <div class="loan-calculator__form">
+                <div class="card">
+                  <div class="card__header">
+                    <h3 class="card__title">Параметры кредита</h3>
+                  </div>
+                  <div class="card__body">
+                    <div class="loan-calculator__row">
+                      <label for="loan-amount" class="loan-calculator__label">Сумма кредита (BYN)</label>
+                      <div class="loan-calculator__slider-container">
+                        <input type="number" id="loan-amount" class="loan-calculator__input" value="50000" min="100" max="500000" step="100">
+                        <div class="loan-calculator__slider-wrapper">
+                          <div class="loan-calculator__slider-progress"></div>
+                          <input type="range" id="loan-amount-slider" class="loan-calculator__slider" min="100" max="500000" step="100" value="50000">
+                          <div class="loan-calculator__slider-values">
+                            <span>100</span>
+                            <span>500 000</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="loan-calculator__row">
+                      <label for="loan-term" class="loan-calculator__label">Срок кредита (месяцев)</label>
+                      <div class="loan-calculator__slider-container">
+                        <input type="number" id="loan-term" class="loan-calculator__input" value="24" min="1" max="240" step="1">
+                        <div class="loan-calculator__slider-wrapper">
+                          <div class="loan-calculator__slider-progress"></div>
+                          <input type="range" id="loan-term-slider" class="loan-calculator__slider" min="1" max="240" step="1" value="24">
+                          <div class="loan-calculator__slider-values">
+                            <span>1</span>
+                            <span>240</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="loan-calculator__row">
+                      <label for="interest-rate" class="loan-calculator__label">Процентная ставка (%)</label>
+                      <div class="loan-calculator__slider-container">
+                        <input type="number" id="interest-rate" class="loan-calculator__input" value="15" min="0.1" max="50" step="0.1">
+                        <div class="loan-calculator__slider-wrapper">
+                          <div class="loan-calculator__slider-progress"></div>
+                          <input type="range" id="interest-rate-slider" class="loan-calculator__slider" min="0.1" max="50" step="0.1" value="15">
+                          <div class="loan-calculator__slider-values">
+                            <span>0.1%</span>
+                            <span>50%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="loan-calculator__row">
+                      <label for="payment-type" class="loan-calculator__label">Тип платежа</label>
+                      <div class="loan-calculator__radio-group">
+                        <div class="radio">
+                          <input type="radio" id="annuity" name="payment-type" value="annuity" checked>
+                          <label for="annuity">Аннуитетный</label>
+                        </div>
+                        <div class="radio">
+                          <input type="radio" id="differential" name="payment-type" value="differential">
+                          <label for="differential">Дифференцированный</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="loan-calculator__actions">
+                      <button id="calculate-loan" class="button button--primary button--full">Рассчитать</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="loan-calculator__results">
+                <div class="card">
+                  <div class="card__header">
+                    <h3 class="card__title">Результаты расчета</h3>
+                  </div>
+                  <div class="card__body">
+                    <div class="loan-calculator__result-summary">
+                      <div class="loan-calculator__result-item">
+                        <span class="loan-calculator__result-label">Ежемесячный платеж:</span>
+                        <span id="monthly-payment" class="loan-calculator__result-value">Заполните параметры</span>
+                      </div>
+                      <div class="loan-calculator__result-item">
+                        <span class="loan-calculator__result-label">Общая сумма:</span>
+                        <span id="total-payment" class="loan-calculator__result-value">-</span>
+                      </div>
+                      <div class="loan-calculator__result-item">
+                        <span class="loan-calculator__result-label">Переплата:</span>
+                        <span id="total-interest" class="loan-calculator__result-value">-</span>
+                      </div>
+                      <div class="loan-calculator__result-item">
+                        <span class="loan-calculator__result-label">Эффективная ставка:</span>
+                        <span id="effective-rate" class="loan-calculator__result-value">-</span>
+                      </div>
+                    </div>
+                    
+                    <div class="loan-calculator__chart-container">
+                      <canvas id="loan-chart" height="200"></canvas>
+                    </div>
+
+                    <div class="loan-calculator__schedule-toggle">
+                      <button id="show-schedule" class="button button--secondary button--full">
+                        Показать график платежей
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rates__sidebar">
+            <div class="rates__ad-placeholder">
+              <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+              <a href="#" class="rates__ad-link">Разместить рекламу</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="rates__mobile-banner">
+          <div class="rates__ad-placeholder">
+            <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+            <a href="#" class="rates__ad-link">Разместить рекламу</a>
+          </div>
+        </div>
+
+        <div id="payment-schedule" class="loan-calculator__schedule" style="display: none;">
+          <div class="card">
+            <div class="card__header">
+              <h3 class="card__title">График платежей</h3>
+            </div>
+            <div class="card__body">
+              <div class="loan-calculator__table-wrapper">
+                <table class="loan-calculator__table">
+                  <thead>
+                    <tr>
+                      <th>№</th>
+                      <th>Дата</th>
+                      <th>Платеж</th>
+                      <th>Основной долг</th>
+                      <th>Проценты</th>
+                      <th>Остаток долга</th>
+                    </tr>
+                  </thead>
+                  <tbody id="payment-schedule-body">
+                    <tr>
+                      <td colspan="6" class="loan-calculator__empty">Заполните параметры кредита</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="loan-tips">
+      <div class="container">
+        <h2 class="section-title">Полезные советы</h2>
+        <div class="loan-tips__grid">
+          <div class="loan-tip-card">
+            <div class="loan-tip-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                <path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm2 34h-4v-4h4v4zm4.13-15.49l-1.79 1.84C26.9 25.79 26 27 26 30h-4v-1c0-2.21.9-4.21 2.34-5.66l2.49-2.52C27.55 20.1 28 19.1 28 18c0-2.21-1.79-4-4-4s-4 1.79-4 4h-4c0-4.42 3.58-8 8-8s8 3.58 8 8c0 1.76-.71 3.35-1.87 4.51z" fill="#27AE60"/>
+              </svg>
+            </div>
+            <h3 class="loan-tip-card__title">Выбор типа платежа</h3>
+            <p class="loan-tip-card__text">Аннуитетный платеж обеспечивает равные выплаты каждый месяц, что удобно для планирования бюджета. Дифференцированный платеж снижается со временем, но в начале платежи выше.</p>
+          </div>
+          
+          <div class="loan-tip-card">
+            <div class="loan-tip-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                <path d="M23.17 26.83L20 30l-8-8 8-8 3.17 3.17L19.34 21H40v4H19.34l3.83 1.83zM8 10h8v4H8v20h8v4H8c-2.21 0-4-1.79-4-4V14c0-2.21 1.79-4 4-4z" fill="#27AE60"/>
+              </svg>
+            </div>
+            <h3 class="loan-tip-card__title">Досрочное погашение</h3>
+            <p class="loan-tip-card__text">При возможности, старайтесь досрочно погашать кредит. Это позволит существенно сэкономить на процентах. Обычно банки позволяют выбрать: уменьшать срок кредита или ежемесячный платеж.</p>
+          </div>
+          
+          <div class="loan-tip-card">
+            <div class="loan-tip-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                <path d="M24 4C15.16 4 8 11.16 8 20c0 6.77 4.23 12.54 10.17 14.83L24 44l5.83-9.17C35.77 32.54 40 26.77 40 20c0-8.84-7.16-16-16-16zm0 28c-6.63 0-12-5.37-12-12S17.37 8 24 8s12 5.37 12 12-5.37 12-12 12zm-6-12c0-3.31 2.69-6 6-6s6 2.69 6 6-2.69 6-6 6-6-2.69-6-6z" fill="#27AE60"/>
+              </svg>
+            </div>
+            <h3 class="loan-tip-card__title">Сравнение предложений</h3>
+            <p class="loan-tip-card__text">Перед оформлением кредита сравните предложения нескольких банков. Обращайте внимание не только на процентную ставку, но и на полную стоимость кредита, включая все комиссии и сборы.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__info">
+          <div class="logo logo--footer">
+            <svg class="logo__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+              <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30c-7.732 0-14-6.268-14-14S8.268 2 16 2s14 6.268 14 14-6.268 14-14 14zm2-22h-4v2h4v-2zm0 4h-4v12h4V12z" fill="#fff"/>
+            </svg>
+            <span class="logo__text logo__text--footer">Финансовый помощник</span>
+          </div>
+          <p class="footer__text">Все курсы валют обновляются автоматически по данным Национального банка Республики Беларусь</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__column">
+            <h3 class="footer__title">Навигация</h3>
+            <ul class="footer__list">
+              <li class="footer__item"><a href="index.html" class="footer__link">Главная</a></li>
+              <li class="footer__item"><a href="converter.html" class="footer__link">Конвертер валют</a></li>
+              <li class="footer__item"><a href="rates.html" class="footer__link">Курсы валют</a></li>
+              <li class="footer__item"><a href="loan.html" class="footer__link">Калькулятор кредитов</a></li>
+              <li class="footer__item"><a href="market-map.html" class="footer__link">Карта рынка</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Финансовый помощник. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-menu">
+    <div class="mobile-menu__header">
+      <div class="logo">
+        <svg class="logo__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+          <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30c-7.732 0-14-6.268-14-14S8.268 2 16 2s14 6.268 14 14-6.268 14-14 14zm2-22h-4v2h4v-2zm0 4h-4v12h4V12z" fill="#27AE60"/>
+        </svg>
+        <span class="logo__text">Финансовый помощник</span>
+      </div>
+      <button class="mobile-menu__close" aria-label="Закрыть меню">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-menu__nav">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item"><a href="index.html" class="mobile-menu__link">Главная</a></li>
+        <li class="mobile-menu__item"><a href="converter.html" class="mobile-menu__link">Конвертер валют</a></li>
+        <li class="mobile-menu__item"><a href="rates.html" class="mobile-menu__link">Курсы валют</a></li>
+        <li class="mobile-menu__item"><a href="loan.html" class="mobile-menu__link mobile-menu__link--active">Калькулятор кредитов</a></li>
+        <li class="mobile-menu__item"><a href="market-map.html" class="mobile-menu__link">Карта рынка</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <script src="js/chart.js"></script>
+  <script src="js/loan.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/ad-modal.js"></script>
+</body>
+</html>

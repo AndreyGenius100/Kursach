@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Финансовый помощник</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="index.html" class="logo__link">
+            <img src="flex.svg" width="64" height="64" alt="Logo" class="logo__image">
+            <h1 class="logo__text">Финансовый помощник</h1>
+          </a>
+        </div>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">Главная</a></li>
+            <li class="nav__item"><a href="converter.html" class="nav__link">Конвертер валют</a></li>
+            <li class="nav__item"><a href="rates.html" class="nav__link">Курсы валют</a></li>
+            <li class="nav__item"><a href="loan.html" class="nav__link">Калькулятор кредитов</a></li>
+            <li class="nav__item"><a href="market-map.html" class="nav__link">Карта рынка</a></li>
+          </ul>
+        </nav>
+        <button class="burger-menu" aria-label="Меню">
+          <span class="burger-menu__line"></span>
+          <span class="burger-menu__line"></span>
+          <span class="burger-menu__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <h2 class="hero__title">Ваш надежный финансовый помощник</h2>
+            <p class="hero__text">Воспользуйтесь нашими инструментами для расчета валют, отслеживания курсов и планирования кредитов с актуальными данными Национального банка Республики Беларусь.</p>
+            <div class="hero__buttons">
+              <a href="converter.html" class="button button--primary">Конвертировать валюту</a>
+              <a href="rates.html" class="button button--secondary">Посмотреть курсы</a>
+            </div>
+          </div>
+          <div class="hero__image">
+            <svg xmlns="http://www.w3.org/2000/svg" width="280" height="200" viewBox="0 0 280 200">
+              <!-- Фон карты с градиентом -->
+              <defs>
+                <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#27AE60"/>
+                  <stop offset="100%" style="stop-color:#219A52"/>
+                </linearGradient>
+                <pattern id="cardPattern" width="50" height="50" patternUnits="userSpaceOnUse">
+                  <path d="M0 0h50v50H0z" fill="none"/>
+                  <path d="M25 0v50M0 25h50" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+                </pattern>
+                <!-- Добавляем тень -->
+                <filter id="cardShadow">
+                  <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+                </filter>
+              </defs>
+              
+              <!-- Основная карта с тенью -->
+              <g filter="url(#cardShadow)">
+                <rect x="40" y="40" width="200" height="120" rx="12" fill="url(#cardGradient)"/>
+                <rect x="40" y="40" width="200" height="120" rx="12" fill="url(#cardPattern)"/>
+              </g>
+              
+              <!-- EMV чип с улучшенным дизайном -->
+              <rect x="65" y="80" width="30" height="25" rx="4" fill="url(#chipGradient)"/>
+              <defs>
+                <linearGradient id="chipGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#FFD700"/>
+                  <stop offset="100%" style="stop-color:#DAA520"/>
+                </linearGradient>
+              </defs>
+              <path d="M70 85h20M70 90h20M70 95h20" stroke="#B8860B" stroke-width="1.5"/>
+              
+              <!-- Номер карты с улучшенным шрифтом -->
+              <text x="65" y="130" font-family="'Roboto Mono', monospace" font-size="16" fill="#FFFFFF" font-weight="500">
+                <tspan>4532</tspan>
+                <tspan x="105">••••</tspan>
+                <tspan x="145">••••</tspan>
+                <tspan x="185">1234</tspan>
+              </text>
+              
+              <!-- Улучшенный логотип банка -->
+              <circle cx="200" cy="70" r="16" fill="#FFFFFF"/>
+              <circle cx="190" cy="70" r="16" fill="#FF0000" opacity="0.9"/>
+              
+              <!-- Срок действия с улучшенным форматированием -->
+              <text x="150" y="150" font-family="Roboto" font-size="9" fill="#FFFFFF" opacity="0.9">VALID THRU</text>
+              <text x="150" y="160" font-family="'Roboto Mono', monospace" font-size="14" fill="#FFFFFF" font-weight="500">12/25</text>
+              
+              <!-- Улучшенный значок бесконтактной оплаты -->
+              <g transform="translate(170, 60)">
+                <path d="M0 10 Q5 5, 10 10 Q15 15, 20 10 Q25 5, 30 10" 
+                      stroke="#FFFFFF" fill="none" stroke-width="2.5" opacity="0.9"/>
+                <path d="M0 5 Q5 0, 10 5 Q15 10, 20 5 Q25 0, 30 5" 
+                      stroke="#FFFFFF" fill="none" stroke-width="2" opacity="0.7"/>
+                <path d="M0 0 Q5 -5, 10 0 Q15 5, 20 0 Q25 -5, 30 0" 
+                      stroke="#FFFFFF" fill="none" stroke-width="1.5" opacity="0.5"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">Наши инструменты</h2>
+        <div class="features__grid">
+          <div class="feature-card" data-aos="fade-up">
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                <path d="M40 8H8c-2.21 0-3.98 1.79-3.98 4L4 36c0 2.21 1.79 4 4 4h32c2.21 0 4-1.79 4-4V12c0-2.21-1.79-4-4-4zm0 28H8V24h32v12zm0-20H8v-4h32v4z" fill="#27AE60"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Конвертер валют</h3>
+            <p class="feature-card__text">Мгновенно конвертируйте между различными валютами по актуальному курсу НБРБ</p>
+            <a href="converter.html" class="feature-card__link">Перейти <span class="arrow">→</span></a>
+          </div>
+          
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                <path d="M38 6h-8.37c-.82-2.32-3.02-4-5.63-4s-4.81 1.68-5.63 4H10c-2.21 0-4 1.79-4 4v28c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V10c0-2.21-1.79-4-4-4zM24 6c1.1 0 2 .89 2 2s-.9 2-2 2-2-.89-2-2 .9-2 2-2zm4 28H14v-4h14v4zm6-8H14v-4h20v4zm0-8H14v-4h20v4z" fill="#27AE60"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Курсы валют</h3>
+            <p class="feature-card__text">Отслеживайте текущие курсы валют от Национального банка Республики Беларусь</p>
+            <a href="rates.html" class="feature-card__link">Перейти <span class="arrow">→</span></a>
+          </div>
+          
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                <path d="M40 8H8c-2.21 0-4 1.79-4 4v24c0 2.21 1.79 4 4 4h32c2.21 0 4-1.79 4-4V12c0-2.21-1.79-4-4-4zm-17.25 6c2.88 0 5.25 2.37 5.25 5.25 0 2.88-2.37 5.25-5.25 5.25s-5.25-2.37-5.25-5.25c0-2.88 2.37-5.25 5.25-5.25zM34 34H14v-2c0-3.87 7.83-6 10-6s10 2.13 10 6v2z" fill="#27AE60"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Калькулятор кредитов</h3>
+            <p class="feature-card__text">Рассчитайте платежи по кредиту с учетом разных условий и процентных ставок</p>
+            <a href="loan.html" class="feature-card__link">Перейти <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info">
+      <div class="container">
+        <div class="info__inner">
+          <div class="info__content">
+            <h2 class="section-title">О нашем сервисе</h2>
+            <p class="info__text">Финансовый помощник предоставляет актуальную информацию по курсам валют Национального банка Республики Беларусь и удобные инструменты для финансовых расчетов.</p>
+            <p class="info__text">Наши инструменты помогут вам:</p>
+            <ul class="info__list">
+              <li class="info__item">Быстро конвертировать валюты по официальному курсу</li>
+              <li class="info__item">Отслеживать изменения курсов основных валют</li>
+              <li class="info__item">Рассчитывать кредитные платежи с разными параметрами</li>
+            </ul>
+          </div>
+          <div class="info__image">
+            <svg xmlns="http://www.w3.org/2000/svg" width="280" height="200" viewBox="0 0 280 200">
+              <rect width="280" height="200" fill="none" />
+              <circle cx="140" cy="100" r="80" fill="#F2F6FC" />
+              <path d="M140 50v100M90 100h100" stroke="#2C3E50" stroke-width="4" />
+              <circle cx="140" cy="100" r="20" fill="#27AE60" />
+              <path d="M140 85v30M125 100h30" stroke="#fff" stroke-width="3" />
+              <circle cx="190" cy="70" r="15" fill="#3498DB" />
+              <circle cx="90" cy="130" r="15" fill="#E74C3C" />
+              <circle cx="180" cy="150" r="12" fill="#F1C40F" />
+              <circle cx="100" cy="60" r="12" fill="#9B59B6" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__info">
+          <div class="logo logo--footer">
+            <svg class="logo__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+              <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30c-7.732 0-14-6.268-14-14S8.268 2 16 2s14 6.268 14 14-6.268 14-14 14zm2-22h-4v2h4v-2zm0 4h-4v12h4V12z" fill="#fff"/>
+            </svg>
+            <span class="logo__text logo__text--footer">Финансовый помощник</span>
+          </div>
+          <p class="footer__text">Все курсы валют обновляются автоматически по данным Национального банка Республики Беларусь</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__column">
+            <h3 class="footer__title">Навигация</h3>
+            <ul class="footer__list">
+              <li class="footer__item"><a href="index.html" class="footer__link">Главная</a></li>
+              <li class="footer__item"><a href="converter.html" class="footer__link">Конвертер валют</a></li>
+              <li class="footer__item"><a href="rates.html" class="footer__link">Курсы валют</a></li>
+              <li class="footer__item"><a href="loan.html" class="footer__link">Калькулятор кредитов</a></li>
+              <li class="footer__item"><a href="market-map.html" class="footer__link">Карта рынка</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Финансовый помощник. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-menu">
+    <div class="mobile-menu__header">
+      <div class="logo">
+        <svg class="logo__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+          <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30c-7.732 0-14-6.268-14-14S8.268 2 16 2s14 6.268 14 14-6.268 14-14 14zm2-22h-4v2h4v-2zm0 4h-4v12h4V12z" fill="#27AE60"/>
+        </svg>
+        <span class="logo__text">Финансовый помощник</span>
+      </div>
+      <button class="mobile-menu__close" aria-label="Закрыть меню">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-menu__nav">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item"><a href="index.html" class="mobile-menu__link mobile-menu__link--active">Главная</a></li>
+        <li class="mobile-menu__item"><a href="converter.html" class="mobile-menu__link">Конвертер валют</a></li>
+        <li class="mobile-menu__item"><a href="rates.html" class="mobile-menu__link">Курсы валют</a></li>
+        <li class="mobile-menu__item"><a href="loan.html" class="mobile-menu__link">Калькулятор кредитов</a></li>
+        <li class="mobile-menu__item"><a href="market-map.html" class="mobile-menu__link">Карта рынка</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/ad-modal.js"></script>
+</body>
+</html>

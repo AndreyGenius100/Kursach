@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<currencies>
+  <lastUpdate>2025-05-30T15:00:00</lastUpdate>
+  <currency>
+    <code>USD</code>
+    <name>Доллар США</name>
+    <rate>3.1750</rate>
+    <scale>1</scale>
+    <change>-0.0025</change>
+    <region>america</region>
+    <popular>true</popular>
+  </currency>
+  <currency>
+    <code>EUR</code>
+    <name>Евро</name>
+    <rate>3.4512</rate>
+    <scale>1</scale>
+    <change>0.0018</change>
+    <region>europe</region>
+    <popular>true</popular>
+  </currency>
+  <currency>
+    <code>RUB</code>
+    <name>Российский рубль</name>
+    <rate>3.4610</rate>
+    <scale>100</scale>
+    <change>0.0053</change>
+    <region>europe</region>
+    <popular>true</popular>
+  </currency>
+  <currency>
+    <code>CNY</code>
+    <name>Китайский юань</name>
+    <rate>0.4387</rate>
+    <scale>1</scale>
+    <change>-0.0004</change>
+    <region>asia</region>
+    <popular>true</popular>
+  </currency>
+  <currency>
+    <code>UAH</code>
+    <name>Украинская гривна</name>
+    <rate>0.0835</rate>
+    <scale>1</scale>
+    <change>0.0001</change>
+    <region>europe</region>
+    <popular>false</popular>
+  </currency>
+  <currency>
+    <code>PLN</code>
+    <name>Польский злотый</name>
+    <rate>0.8123</rate>
+    <scale>1</scale>
+    <change>0.0012</change>
+    <region>europe</region>
+    <popular>false</popular>
+  </currency>
+  <currency>
+    <code>GBP</code>
+    <name>Фунт стерлингов</name>
+    <rate>4.0365</rate>
+    <scale>1</scale>
+    <change>0.0085</change>
+    <region>europe</region>
+    <popular>false</popular>
+  </currency>
+  <currency>
+    <code>JPY</code>
+    <name>Японская иена</name>
+    <rate>2.1052</rate>
+    <scale>100</scale>
+    <change>-0.0024</change>
+    <region>asia</region>
+    <popular>false</popular>
+  </currency>
+  <currency>
+    <code>CHF</code>
+    <name>Швейцарский франк</name>
+    <rate>3.5421</rate>
+    <scale>1</scale>
+    <change>0.0037</change>
+    <region>europe</region>
+    <popular>false</popular>
+  </currency>
+  <currency>
+    <code>TRY</code>
+    <name>Турецкая лира</name>
+    <rate>0.0984</rate>
+    <scale>1</scale>
+    <change>-0.0009</change>
+    <region>asia</region>
+    <popular>false</popular>
+  </currency>
+  <currency>
+    <code>CZK</code>
+    <name>Чешская крона</name>
+    <rate>0.1382</rate>
+    <scale>1</scale>
+    <change>0.0003</change>
+    <region>europe</region>
+    <popular>false</popular>
+  </currency>
+  <currency>
+    <code>CAD</code>
+    <name>Канадский доллар</name>
+    <rate>2.3587</rate>
+    <scale>1</scale>
+    <change>0.0012</change>
+    <region>america</region>
+    <popular>false</popular>
+  </currency>
+  <currency>
+    <code>AUD</code>
+    <name>Австралийский доллар</name>
+    <rate>2.1152</rate>
+    <scale>1</scale>
+    <change>-0.0015</change>
+    <region>asia</region>
+    <popular>false</popular>
+  </currency>
+  <currency>
+    <code>KZT</code>
+    <name>Казахстанский тенге</name>
+    <rate>0.7051</rate>
+    <scale>100</scale>
+    <change>0.0008</change>
+    <region>asia</region>
+    <popular>false</popular>
+  </currency>
+</currencies>

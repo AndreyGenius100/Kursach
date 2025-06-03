@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Конвертер валют - Финансовый помощник</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="index.html" class="logo__link">
+            <img src="flex.svg" width="64" height="64" alt="Logo" class="logo__image">
+            <h1 class="logo__text">Финансовый помощник</h1>
+          </a>
+        </div>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+            <li class="nav__item"><a href="converter.html" class="nav__link nav__link--active">Конвертер валют</a></li>
+            <li class="nav__item"><a href="rates.html" class="nav__link">Курсы валют</a></li>
+            <li class="nav__item"><a href="loan.html" class="nav__link">Калькулятор кредитов</a></li>
+            <li class="nav__item"><a href="market-map.html" class="nav__link">Карта рынка</a></li>
+          </ul>
+        </nav>
+        <button class="burger-menu" aria-label="Меню">
+          <span class="burger-menu__line"></span>
+          <span class="burger-menu__line"></span>
+          <span class="burger-menu__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="page-header">
+      <div class="container">
+        <h2 class="page-header__title">Конвертер валют</h2>
+        <p class="page-header__text">Быстрый и удобный конвертер валют по официальному курсу Национального банка Республики Беларусь</p>
+      </div>
+    </section>
+
+    <section class="converter">
+      <div class="container">
+        <div class="converter__inner">
+          <div class="converter__sidebar converter__sidebar--left">
+            <div class="rates__ad-placeholder">
+              <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+              <a href="#" class="rates__ad-link">Разместить рекламу</a>
+            </div>
+          </div>
+
+          <div class="converter__main">
+            <div class="converter__mobile-ads">
+              <div class="converter__mobile-ad">
+                <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+                <a href="#" class="rates__ad-link">Разместить рекламу</a>
+              </div>
+            </div>
+
+            <div class="converter__card">
+              <div class="converter__header">
+                <h3 class="converter__title">Введите сумму для конвертации</h3>
+                <p class="converter__updated">Курсы обновлены: <span id="last-update-date">Загрузка...</span></p>
+              </div>
+              
+              <div class="converter__body">
+                <div class="converter__row">
+                  <div class="converter__input-group">
+                    <label for="amount-from" class="converter__label">Сумма</label>
+                    <input type="number" id="amount-from" class="converter__input" value="1" min="0" step="0.01">
+                  </div>
+                  
+                  <div class="converter__input-group">
+                    <label for="currency-from" class="converter__label">Из валюты</label>
+                    <div class="converter__select-wrapper">
+                      <select id="currency-from" class="converter__select">
+                        <option value="BYN">BYN - Белорусский рубль</option>
+                        <option value="USD">USD - Доллар США</option>
+                        <option value="EUR">EUR - Евро</option>
+                        <option value="RUB">RUB - Российский рубль</option>
+                        <option value="CNY">CNY - Китайский юань</option>
+                      </select>
+                      <svg class="converter__select-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="converter__swap">
+                  <button id="swap-button" class="converter__swap-button" aria-label="Поменять валюты местами">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z" fill="currentColor"/>
+                    </svg>
+                  </button>
+                </div>
+                
+                <div class="converter__row">
+                  <div class="converter__input-group">
+                    <label for="amount-to" class="converter__label">Сумма</label>
+                    <input type="number" id="amount-to" class="converter__input" readonly>
+                  </div>
+                  
+                  <div class="converter__input-group">
+                    <label for="currency-to" class="converter__label">В валюту</label>
+                    <div class="converter__select-wrapper">
+                      <select id="currency-to" class="converter__select">
+                        <option value="USD">USD - Доллар США</option>
+                        <option value="BYN">BYN - Белорусский рубль</option>
+                        <option value="EUR">EUR - Евро</option>
+                        <option value="RUB">RUB - Российский рубль</option>
+                        <option value="CNY">CNY - Китайский юань</option>
+                      </select>
+                      <svg class="converter__select-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                
+               
+                <div class="converter__actions">
+                  <button id="convert-button" class="button button--primary button--full">Конвертировать</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="converter__info-card">
+              <h3 class="converter__info-title">Информация</h3>
+              <p class="converter__info-text">Конвертер использует официальные курсы валют Национального банка Республики Беларусь.</p>
+              <p class="converter__info-text">Данные обновляются автоматически при публикации новых курсов НБРБ.</p>
+              <p class="converter__info-text">Для получения более подробной информации о курсах валют, пожалуйста, посетите страницу <a href="rates.html" class="converter__info-link">Курсы валют</a>.</p>
+              
+              <div class="converter__popular">
+                <h4 class="converter__popular-title">Популярные валюты</h4>
+                <ul class="converter__popular-list">
+                  <li class="converter__popular-item">
+                    <div class="currency-badge">
+                      <span class="currency-badge__code">USD</span>
+                      <span id="usd-rate" class="currency-badge__rate">Загрузка...</span>
+                    </div>
+                  </li>
+                  <li class="converter__popular-item">
+                    <div class="currency-badge">
+                      <span class="currency-badge__code">EUR</span>
+                      <span id="eur-rate" class="currency-badge__rate">Загрузка...</span>
+                    </div>
+                  </li>
+                  <li class="converter__popular-item">
+                    <div class="currency-badge">
+                      <span class="currency-badge__code">RUB</span>
+                      <span id="rub-rate" class="currency-badge__rate">Загрузка...</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="converter__mobile-ads">
+              <div class="converter__mobile-ad">
+                <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+                <a href="#" class="rates__ad-link">Разместить рекламу</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="converter__sidebar converter__sidebar--right">
+            <div class="rates__ad-placeholder">
+              <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+              <a href="#" class="rates__ad-link">Разместить рекламу</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__info">
+          <div class="logo logo--footer">
+            <svg class="logo__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+              <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30c-7.732 0-14-6.268-14-14S8.268 2 16 2s14 6.268 14 14-6.268 14-14 14zm2-22h-4v2h4v-2zm0 4h-4v12h4V12z" fill="#fff"/>
+            </svg>
+            <span class="logo__text logo__text--footer">Финансовый помощник</span>
+          </div>
+          <p class="footer__text">Все курсы валют обновляются автоматически по данным Национального банка Республики Беларусь</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__column">
+            <h3 class="footer__title">Навигация</h3>
+            <ul class="footer__list">
+              <li class="footer__item"><a href="index.html" class="footer__link">Главная</a></li>
+              <li class="footer__item"><a href="converter.html" class="footer__link">Конвертер валют</a></li>
+              <li class="footer__item"><a href="rates.html" class="footer__link">Курсы валют</a></li>
+              <li class="footer__item"><a href="loan.html" class="footer__link">Калькулятор кредитов</a></li>
+              <li class="footer__item"><a href="market-map.html" class="footer__link">Карта рынка</a></li>
+            </ul>
+          </div>
+
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Финансовый помощник. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-menu">
+    <div class="mobile-menu__header">
+      <div class="logo">
+        <svg class="logo__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+          <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30c-7.732 0-14-6.268-14-14S8.268 2 16 2s14 6.268 14 14-6.268 14-14 14zm2-22h-4v2h4v-2zm0 4h-4v12h4V12z" fill="#27AE60"/>
+        </svg>
+        <span class="logo__text">Финансовый помощник</span>
+      </div>
+      <button class="mobile-menu__close" aria-label="Закрыть меню">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-menu__nav">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item"><a href="index.html" class="mobile-menu__link">Главная</a></li>
+        <li class="mobile-menu__item"><a href="converter.html" class="mobile-menu__link mobile-menu__link--active">Конвертер валют</a></li>
+        <li class="mobile-menu__item"><a href="rates.html" class="mobile-menu__link">Курсы валют</a></li>
+        <li class="mobile-menu__item"><a href="loan.html" class="mobile-menu__link">Калькулятор кредитов</a></li>
+        <li class="mobile-menu__item"><a href="market-map.html" class="mobile-menu__link">Карта рынка</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/converter.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/ad-modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<div class="modal" id="adModal">
+  <div class="modal__overlay"></div>
+  <div class="modal__container">
+    <div class="modal__header">
+      <h3 class="modal__title">Разместить рекламу</h3>
+      <button class="modal__close" aria-label="Закрыть">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+    <form class="ad-form" id="adForm">
+      <div class="ad-form__row">
+        <label class="ad-form__label" for="companyName">Название компании</label>
+        <input type="text" id="companyName" name="companyName" class="ad-form__input" required>
+      </div>
+      <div class="ad-form__row">
+        <label class="ad-form__label" for="contactPerson">Контактное лицо</label>
+        <input type="text" id="contactPerson" name="contactPerson" class="ad-form__input" required>
+      </div>
+      <div class="ad-form__row">
+        <label class="ad-form__label" for="email">Email</label>
+        <input type="email" id="email" name="email" class="ad-form__input" required>
+      </div>
+      <div class="ad-form__row">
+        <label class="ad-form__label" for="phone">Телефон</label>
+        <input type="tel" id="phone" name="phone" class="ad-form__input" required>
+      </div>
+      <div class="ad-form__row">
+        <label class="ad-form__label" for="adType">Тип рекламного места</label>
+        <select id="adType" name="adType" class="ad-form__select" required>
+          <option value="">Выберите тип</option>
+          <option value="wide">Широкий баннер (верх страницы)</option>
+          <option value="narrow">Узкий баннер (верх страницы)</option>
+          <option value="sidebar">Боковой баннер</option>
+        </select>
+      </div>
+      <div class="ad-form__row">
+        <label class="ad-form__label" for="duration">Длительность размещения</label>
+        <select id="duration" name="duration" class="ad-form__select" required>
+          <option value="">Выберите срок</option>
+          <option value="1">1 месяц</option>
+          <option value="3">3 месяца</option>
+          <option value="6">6 месяцев</option>
+          <option value="12">12 месяцев</option>
+        </select>
+      </div>
+      <div class="ad-form__row">
+        <label class="ad-form__label" for="message">Дополнительная информация</label>
+        <textarea id="message" name="message" class="ad-form__textarea" rows="4"></textarea>
+      </div>
+      <div class="ad-form__actions">
+        <button type="submit" class="button button--primary">Отправить заявку</button>
+        <button type="button" class="button button--secondary modal__cancel">Отмена</button>
+      </div>
+    </form>
+  </div>
+</div> 

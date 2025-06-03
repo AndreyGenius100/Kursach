@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Основной SVG контейнер с viewBox 500x500 пикселей -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <!-- Градиент для текста "FinFlex" - от зеленого к темно-зеленому -->
+    <linearGradient gradientUnits="userSpaceOnUse" x1="210.922" y1="212.726" x2="210.922" y2="272.117" id="gradient-1">
+      <stop offset="0" style="stop-color: rgb(0% 83.137% 18.039%)"/>  <!-- Светло-зеленый цвет -->
+      <stop offset="1" style="stop-color: rgb(0% 48.794% 3.7667%)"/>  <!-- Темно-зеленый цвет -->
+    </linearGradient>
+    
+    <!-- Подключение шрифта Roboto из Google Fonts -->
+    <style bx:fonts="Roboto">@import url(https://fonts.googleapis.com/css2?family=Roboto%3Aital%2Cwght%400%2C100%3B0%2C300%3B0%2C400%3B0%2C500%3B0%2C700%3B0%2C900%3B1%2C100%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C700%3B1%2C900&amp;display=swap);</style>
+    
+    <!-- Градиент для символа - от светло-зеленого (#bada55) к темно-зеленому (#758d29) -->
+    <linearGradient gradientUnits="userSpaceOnUse" x1="186.249" y1="131.038" x2="186.249" y2="305.249" id="gradient-0" spreadMethod="pad">
+      <stop offset="0" style="stop-color: #bada55"/>  <!-- Начальный цвет градиента -->
+      <stop offset="1" style="stop-color: #758d29"/>  <!-- Конечный цвет градиента -->
+    </linearGradient>
+  </defs>
+
+  <!-- Текстовый элемент "FinFlex" с применением градиента и трансформацией -->
+  <text style="fill: url(&quot;#gradient-1&quot;); font-family: Roboto; font-size: 28px; stroke-linecap: square; stroke-linejoin: bevel; stroke-opacity: 0.55; stroke-width: 1.17201px; white-space: pre;" transform="matrix(3.652497, 0, 0, 3.173386, -551.996826, -358.645233)"><tspan x="223.022" y="184.995">Fin</tspan><tspan x="223.022" dy="1em">​</tspan><tspan>Flex</tspan></text>
+
+  <!-- Геометрический символ (путь) с градиентной заливкой -->
+  <path style="stroke: rgb(0, 0, 0); fill: url(&quot;#gradient-0&quot;); fill-rule: nonzero; stroke-linecap: square; stroke-linejoin: bevel; stroke-width: 0px;" d="M 127.441 162.898 L 127.955 267.215 C 124.738 269.021 161.098 305.838 184.481 305.242 C 210.554 304.577 249.707 270.616 244.604 270.812 L 244.091 162.384 L 183.967 131.038 L 127.441 162.898 Z"/>
+</svg>

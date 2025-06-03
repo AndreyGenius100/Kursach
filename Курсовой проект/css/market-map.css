@@ -1,0 +1,25 @@
+.market-map__tooltip {
+  position: fixed;
+  z-index: 1000;
+  background: rgba(33, 33, 33, 0.95);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  white-space: nowrap;
+  display: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin: 0;
+  transform: none;
+}
+
+.market-map__tooltip.visible {
+  display: block;
+}
+
+.market-map__tooltip strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+} 

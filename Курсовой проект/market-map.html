@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Карта рынка - Финансовый помощник</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/market-map.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="index.html" class="logo__link">
+            <img src="flex.svg" width="64" height="64" alt="Logo" class="logo__image">
+            <h1 class="logo__text">Финансовый помощник</h1>
+          </a>
+        </div>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+            <li class="nav__item"><a href="converter.html" class="nav__link">Конвертер валют</a></li>
+            <li class="nav__item"><a href="rates.html" class="nav__link">Курсы валют</a></li>
+            <li class="nav__item"><a href="loan.html" class="nav__link">Калькулятор кредитов</a></li>
+            <li class="nav__item"><a href="market-map.html" class="nav__link nav__link--active">Карта рынка</a></li>
+          </ul>
+        </nav>
+        <button class="burger-menu" aria-label="Меню">
+          <span class="burger-menu__line"></span>
+          <span class="burger-menu__line"></span>
+          <span class="burger-menu__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="page-header">
+      <div class="container">
+        <h2 class="page-header__title">Карта рынка</h2>
+        <p class="page-header__text">Визуализация состояния финансового рынка в реальном времени</p>
+      </div>
+    </section>
+
+    <section class="market-map">
+      <div class="container">
+        <!-- Верхние баннеры -->
+        <div class="rates__ads">
+          <div class="rates__ads-grid">
+            <div class="rates__ad-placeholder rates__ad-placeholder--wide">
+              <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+              <a href="#" class="rates__ad-link">Разместить рекламу</a>
+            </div>
+            <div class="rates__ad-placeholder rates__ad-placeholder--narrow">
+              <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+              <a href="#" class="rates__ad-link">Разместить рекламу</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="rates__content">
+          <div class="rates__main">
+            <div class="market-map__controls">
+              <div class="market-map__filters">
+                <div class="market-map__legend">
+                  <span class="market-map__legend-item market-map__legend-item--up">+5%</span>
+                  <span class="market-map__legend-item market-map__legend-item--neutral">0%</span>
+                  <span class="market-map__legend-item market-map__legend-item--down">-5%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="market-map__container">
+              <div id="marketMap" class="market-map__visualization"></div>
+              <div id="tooltip" class="market-map__tooltip"></div>
+            </div>
+
+            <div class="market-map__info">
+              <div class="market-map__stats">
+                <div class="market-map__stat-item">
+                  <span class="market-map__stat-label">Растут:</span>
+                  <span class="market-map__stat-value market-map__stat-value--up">0</span>
+                </div>
+                <div class="market-map__stat-item">
+                  <span class="market-map__stat-label">Падают:</span>
+                  <span class="market-map__stat-value market-map__stat-value--down">0</span>
+                </div>
+                <div class="market-map__stat-item">
+                  <span class="market-map__stat-label">Объем торгов:</span>
+                  <span class="market-map__stat-value">0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rates__sidebar">
+            <div class="rates__ad-placeholder">
+              <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+              <a href="#" class="rates__ad-link">Разместить рекламу</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="rates__mobile-banner">
+          <div class="rates__ad-placeholder">
+            <span class="rates__ad-text">Здесь могла быть ваша реклама</span>
+            <a href="#" class="rates__ad-link">Разместить рекламу</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__info">
+          <div class="logo logo--footer">
+            <svg class="logo__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+              <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30c-7.732 0-14-6.268-14-14S8.268 2 16 2s14 6.268 14 14-6.268 14-14 14zm2-22h-4v2h4v-2zm0 4h-4v12h4V12z" fill="#fff"/>
+            </svg>
+            <span class="logo__text logo__text--footer">Финансовый помощник</span>
+          </div>
+          <p class="footer__text">Все данные предоставляются в режиме реального времени с задержкой 15 минут</p>
+        </div>
+        <nav class="footer__nav">
+          <div class="footer__column">
+            <h3 class="footer__title">Навигация</h3>
+            <ul class="footer__list">
+              <li class="footer__item"><a href="index.html" class="footer__link">Главная</a></li>
+              <li class="footer__item"><a href="converter.html" class="footer__link">Конвертер валют</a></li>
+              <li class="footer__item"><a href="rates.html" class="footer__link">Курсы валют</a></li>
+              <li class="footer__item"><a href="loan.html" class="footer__link">Калькулятор кредитов</a></li>
+              <li class="footer__item"><a href="market-map.html" class="footer__link">Карта рынка</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Финансовый помощник. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-menu">
+    <div class="mobile-menu__header">
+      <div class="logo">
+        <svg class="logo__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+          <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30c-7.732 0-14-6.268-14-14S8.268 2 16 2s14 6.268 14 14-6.268 14-14 14zm2-22h-4v2h4v-2zm0 4h-4v12h4V12z" fill="#27AE60"/>
+        </svg>
+        <span class="logo__text">Финансовый помощник</span>
+      </div>
+      <button class="mobile-menu__close" aria-label="Закрыть меню">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-menu__nav">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item"><a href="index.html" class="mobile-menu__link">Главная</a></li>
+        <li class="mobile-menu__item"><a href="converter.html" class="mobile-menu__link">Конвертер валют</a></li>
+        <li class="mobile-menu__item"><a href="rates.html" class="mobile-menu__link">Курсы валют</a></li>
+        <li class="mobile-menu__item"><a href="loan.html" class="mobile-menu__link">Калькулятор кредитов</a></li>
+        <li class="mobile-menu__item"><a href="market-map.html" class="mobile-menu__link mobile-menu__link--active">Карта рынка</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <script src="js/market-map.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/ad-modal.js"></script>
+</body>
+</html> 
